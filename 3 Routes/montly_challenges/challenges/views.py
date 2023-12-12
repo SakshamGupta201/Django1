@@ -45,9 +45,10 @@ def index(request, month):
         challenge = challenges_dict[month]
         formatted_month = month.capitalize()
         formatted_challenge = challenge.capitalize()
-        response_message = (
-            f"<h1>Challenge for {formatted_month} is {formatted_challenge}</h1>"
+        return render(
+            request,
+            "challenges/challenge.html",
+            {"challenge_text": formatted_challenge, "month": formatted_month},
         )
-        return render(request, "challenges/challenge.html")
     else:
         return HttpResponseBadRequest(f"<h1>No challenge found for this month</h1>")
