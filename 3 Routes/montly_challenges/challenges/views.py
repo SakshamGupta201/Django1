@@ -18,6 +18,17 @@ challenges_dict = {
 }
 
 
+def challenges(request):
+    list_items = ""
+    months = list(challenges_dict.keys())
+    for month in months:
+        month_path = reverse("month_challenge", args=[month])
+        list_items += f'<li> <a href="{month_path}">{month.capitalize()}</a></li>'
+
+    response_data = f"""<ul>{list_items}</ul>"""
+    return HttpResponse(response_data)
+
+
 def month_challenge_by_number(request, month):
     months = list(challenges_dict.keys())
     actual_month = months[month - 1]
