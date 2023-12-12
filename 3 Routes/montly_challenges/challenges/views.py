@@ -1,5 +1,7 @@
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
+from django.shortcuts import render
 from django.urls import reverse
+
 
 # Create your views here.
 challenges_dict = {
@@ -46,6 +48,6 @@ def index(request, month):
         response_message = (
             f"<h1>Challenge for {formatted_month} is {formatted_challenge}</h1>"
         )
-        return HttpResponse(response_message)
+        return render(request, "challenges/challenge.html")
     else:
         return HttpResponseBadRequest(f"<h1>No challenge found for this month</h1>")
