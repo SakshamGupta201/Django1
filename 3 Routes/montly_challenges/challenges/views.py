@@ -16,19 +16,15 @@ challenges_dict = {
     "september": "Include at least one serving of vegetables in every meal for a week.",
     "october": "Practice mindfulness and meditation for 10 minutes each day for a month.",
     "november": "Complete a 7-day fitness challenge found online (e.g., HIIT, yoga, or dance).",
-    "december": "Set a step goal and walk that many steps every day for a week.",
+    "december": "",
 }
 
 
 def challenges(request):
     list_items = ""
     months = list(challenges_dict.keys())
-    for month in months:
-        month_path = reverse("month_challenge", args=[month])
-        list_items += f'<li> <a href="{month_path}">{month.capitalize()}</a></li>'
 
-    response_data = f"""<ul>{list_items}</ul>"""
-    return HttpResponse(response_data)
+    return render(request, "challenges/index.html", {"months": months})
 
 
 def month_challenge_by_number(request, month):
@@ -43,8 +39,8 @@ def index(request, month):
 
     if month in challenges_dict:
         challenge = challenges_dict[month]
-        formatted_month = month.capitalize()
-        formatted_challenge = challenge.capitalize()
+        formatted_month = month
+        formatted_challenge = challenge
         return render(
             request,
             "challenges/challenge.html",
