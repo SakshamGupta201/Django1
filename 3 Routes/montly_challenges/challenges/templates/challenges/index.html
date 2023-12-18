@@ -1,23 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Challenges</title>
-    <style>
-      ul {
-        list-style: none;
-      }
-    </style>
-  </head>
+{% extends 'base.html' %}
+{% load static %}
 
-  <body>
-    <ul>
-      {% for month in months %}
-        <li>
-          <a href="{% url 'month_challenge' month = month %}">{{ month|capfirst }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </body>
-</html>
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "challenges/challenges.css" %}" />
+{% endblock %}
+
+
+{% block title %}
+  All Challenges
+{% endblock %}
+
+{% block body %}
+  {% include 'challenges/includes/header.html' %}
+  <ul>
+    {% for month in months %}
+      <li>
+        <a href="{% url 'month_challenge' month %}">{{ month|capfirst }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
