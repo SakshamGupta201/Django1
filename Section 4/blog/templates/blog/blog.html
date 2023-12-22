@@ -11,16 +11,10 @@
 {% endblock %}
 
 {% block content %}
-  <header class="main-navigation">
-    <h1><a href="">Saksham's Blog</a></h1>
-    <nav>
-      <a href="">All Posts</a>
-    </nav>
-  </header>
 
   <section id="welcome">
     <header>
-      <img src="" alt="Saksham - Author of this Blog" />
+      <img src="{% static 'images/max.png' %}" alt="Saksham - Author of this Blog" />
       <h2>Saksham Blog</h2>
     </header>
     <p>Hi I am Saksham, I love to blog about tech and the world!</p>
@@ -30,17 +24,9 @@
     <h2>My Latest Posts</h2>
 
     <ul>
-      <li>
-        <article class="post">
-          <a href="">
-            <img src="" alt="Mountains Hiking" />
-            <div class="post__content">
-              <h3>Mountain Hiking</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ad, nisi excepturi et quibusdam hic ab id blanditiis, consequatur voluptate, veritatis earum quisquam neque assumenda autem saepe! Aperiam, illo perspiciatis! Veritatis necessitatibus laboriosam vitae ea magni iusto, cumque provident odio! Ipsam laboriosam obcaecati explicabo voluptas ut. Neque illo veniam voluptas esse iure? Ex dolor rerum adipisci rem beatae doloremque officiis.</p>
-            </div>
-          </a>
-        </article>
-      </li>
+      {% for post in posts %}
+      {% include "blog/include/post.html" %}
+      {% endfor %}
     </ul>
   </section>
 
