@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  My Blog
+{% endblock %}
+
+{% block css_files %}
+  <link rel="stylesheet" href={% static "blog/blog.css" %}>
+{% endblock %}
+
+{% block content %}
+  <header class="main-navigation">
+    <h1><a href="">Saksham's Blog</a></h1>
+    <nav>
+      <a href="">All Posts</a>
+    </nav>
+  </header>
+
+  <section id="welcome">
+    <header>
+      <img src="" alt="Saksham - Author of this Blog" />
+      <h2>Saksham Blog</h2>
+    </header>
+    <p>Hi I am Saksham, I love to blog about tech and the world!</p>
+  </section>
+
+  <section id="latest-posts">
+    <h2>My Latest Posts</h2>
+
+    <ul>
+      <li>
+        <article class="post">
+          <a href="">
+            <img src="" alt="Mountains Hiking" />
+            <div class="post__content">
+              <h3>Mountain Hiking</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ad, nisi excepturi et quibusdam hic ab id blanditiis, consequatur voluptate, veritatis earum quisquam neque assumenda autem saepe! Aperiam, illo perspiciatis! Veritatis necessitatibus laboriosam vitae ea magni iusto, cumque provident odio! Ipsam laboriosam obcaecati explicabo voluptas ut. Neque illo veniam voluptas esse iure? Ex dolor rerum adipisci rem beatae doloremque officiis.</p>
+            </div>
+          </a>
+        </article>
+      </li>
+    </ul>
+  </section>
+
+  <section id="about">
+    <h2>What I Do</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe pariatur similique natus, illo at aperiam nesciunt doloremque laudantium reprehenderit dolorum, ratione ex non accusantium accusamus sint in ab praesentium autem.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, molestiae distinctio modi culpa dolorem sint maxime. Eveniet commodi voluptates, modi odio id similique porro aperiam ullam reiciendis? Laudantium, rem eligendi?</p>
+  </section>
+{% endblock %}
