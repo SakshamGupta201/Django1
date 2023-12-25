@@ -1,0 +1,38 @@
+{% extends 'book_outlet/base.html' %}
+
+{% block title %}
+  {{ title }}
+{% endblock %}
+
+{% block content %}
+  <style>
+    /* Add your styles here */
+    h1 {
+      color: #333; /* Adjust the color as needed */
+    }
+
+    h2 {
+      color: #555; /* Adjust the color as needed */
+    }
+
+    p {
+      margin-bottom: 20px; /* Add some margin to separate the paragraphs */
+    }
+
+    span {
+      font-weight: bold; /* Make the text in the span bold */
+    }
+  </style>
+
+  <h1>{{ title }}</h1>
+  <h2>{{ author }}</h2>
+  <p>
+    The book has a rating of {{ rating }}
+
+    {% if is_bestseller %}
+      <span> and is a best seller.</span>
+    {% else %}
+      <span> but not a best seller.</span>
+    {% endif %}
+  </p>
+{% endblock %}
