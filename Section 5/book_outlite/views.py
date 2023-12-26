@@ -7,7 +7,7 @@ from django.db.models import Avg, Min
 
 
 def index(request):
-    books = Book.objects.all().order_by("title",'rating')
+    books = Book.objects.all().order_by("title", "rating")
     num_books = books.count()
     average_rating = books.aggregate(Avg("rating"), Min("rating"))
     print(average_rating)

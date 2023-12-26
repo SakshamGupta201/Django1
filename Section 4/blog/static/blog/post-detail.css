@@ -24,6 +24,13 @@ body {
   font-size: 4.5rem;
 }
 
+#summary .tag {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 5px;
+}
+
 #summary article {
   position: absolute;
   top: 2rem;
@@ -47,9 +54,15 @@ body {
   font-weight: bold;
 }
 
+#summary a {
+  color: white;
+  text-decoration: none;
+}
+
 #summary time {
   font-weight: bold;
-} 
+}
+
 
 main {
   width: 90%;
