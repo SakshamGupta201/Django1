@@ -1,18 +1,17 @@
-{% load static %}
-
 <style>
-a{
-  color: black;
-}
+  a {
+    color: black;
+  }
 </style>
 
 <li>
   <article class="post">
-    <a href={% url "detail_post_page" post.slug %}>
-      <img src="{% static 'images/' %}{{ post.image_name }}" alt="{{post.title}}" />
+    <a href="{% url 'detail_post_page' post.slug %}">
+      <img src="{{ post.image.url }}" alt="{{ post.title }}" />
+
       <div id="post__content">
-        <h3>{{post.title}}</h3>
-        <p>{{post.excerpt}}</p>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt }}</p>
       </div>
     </a>
   </article>

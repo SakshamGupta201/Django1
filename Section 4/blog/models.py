@@ -29,7 +29,8 @@ class Author(models.Model):
 class Post(models.Model):
     # Model for representing blog posts
     title = models.CharField(max_length=50)
-    image_name = models.CharField(max_length=100)
+    # image_name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="posts",null=True)
     excerpt = models.CharField(max_length=150)
     date = models.DateField(auto_now=True)
     slug = models.SlugField(blank=True)
